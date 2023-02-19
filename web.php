@@ -13,8 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
+Route::get('/articles/{article}', function ($article) {
+    return view('index' , [
+        'title' => $article,
+        'status' => true,
+        'articles' => [
+            'article 1',
+            'article 2'
+        ]
+    ]);
 });
 
 Route::get('/mahshid', function () {
